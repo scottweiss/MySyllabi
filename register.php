@@ -70,7 +70,7 @@
     rules: 'required|matches[password]'
 }, {
     name: 'email',
-    rules: 'valid_email'
+    rules: 'required|valid_email'
 }, {
     name: 'minlength',
     display: 'min length',
