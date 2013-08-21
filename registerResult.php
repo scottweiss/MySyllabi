@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script type="text/javascript" src="js/validate.min.js"></script>
     </head>
 
     <body>
@@ -22,32 +21,25 @@
         <!-- Add your site or application content here -->
         
         <div id="main">
-            <div id="header" class="stiched">
-
-                <form action="mainSearch.php" class="fRight">
-                    <input type="search" name="classSearch" class="mainSearch" placeholder="Search">
-                    <input type="submit">
-                </form>
-
-                <span class="title">MySylla.bi</span>
-                <span class="tagline">100% juice</span> This blue shit has got to go
-        	
-        	   <div class="clearfix"></div>
-
-            </div><!-- end of header -->
+            <?php
+            include ("header.php");
+            ?>
 
 
     <div id="mainContent">
+
         <div id="sideBar">
-             <?php
+
+           <?php
             include ("php/login.php");
             ?>
+            
         </div><!-- end of sidebar -->
 
 
 
         <div id="content" class="stiched">
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view. 
+            Congratulations! You may now login. 
         </div><!-- end of content -->
 
 
@@ -55,7 +47,11 @@
 
     </div>
 
-        <footer class="stiched">HERE BE THE FOOTER, ARR</footer><!-- End footer -->
+        <?php
+
+            include ("footer.php");
+        
+        ?>
 
 		</div>
 		<!-- End site content -->

@@ -24,5 +24,8 @@ while($row = mysqli_fetch_array($result))
   echo "</div>";
   }
 
+$newUser = mysqli_query($con, "INSERT INTO users (userID, username, password, email)
+VALUES ('', '$username', '$password_hash', '$email')");
 
+header('Location: registerResult.php');
 ?>
