@@ -60,9 +60,11 @@
     rules: 'required'
 }, {
     name: 'userName',
+    display: 'user name',
     rules: 'required|alpha_numeric|required|min_length[6]'
 }, {
     name: 'password',
+    display: 'password',
     rules: 'required|min_length[6]'
 }, {
     name: 'password_confirm',

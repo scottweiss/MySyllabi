@@ -1,4 +1,4 @@
-<?php
+<?php session_start(); 
 
 include '../php/connect.php';
 
@@ -26,9 +26,10 @@ $rowcount=mysqli_num_rows($result);
 if (password_verify($password, $hash)) {
     echo 'Password is valid!';
     $_SESSION["username"] = $username;
-    header("location:" .$username.".php");
+    header("location: ../home.php");
 } else {
     echo 'Invalid password.';
+    header("location: ../index.php?e=2");
 }
 
 

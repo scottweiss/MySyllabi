@@ -29,8 +29,11 @@
     </form>
 
     <span class="title">MySylla.bi</span>
-    <span class="tagline">100% juice</span> This blue shit has got to go
+    <span class="tagline">100% juice</span>Steph is working on the look of this shithole
 
    <div class="clearfix"></div>
 
 </div><!-- end of header -->
+<?php
+            include ("php/errors.php");
+            ?>

@@ -37,14 +37,14 @@ body {
 	margin: 0 auto;
 	background-color: rgba(248,248,255,.7);
 	background-image: url("../img/polaroid.png");
-	padding: 10px 0px;
+	padding: 5px 0px;
 }
 #sideBar {
 	width: 200px;
 	float: left;
 	padding: 20px;
 	margin: 10px;
-	background-color: green;
+
 }
 .loginInput {
 	width: 90%;
@@ -70,7 +70,7 @@ body {
 }
 #sideBar a {
 	font-size: .85em;
-	background-color: green;
+
 }
 #content {
 	width: 572px;
@@ -117,15 +117,21 @@ select, button, input {
 .stiched {
 	padding: 20px;
 	margin: 10px;
-	background: #213368;
-	color: #FFF;
 	font-weight: bold;
 	line-height: 1.3em;
+	font-weight: normal;
+	background: rgba(0, 0, 0, 0.4)
+
+/*
+	background: #213368;
+	color: #FFF;
 	border: 2px dashed #fff;
 	border-radius: 10px;
 	box-shadow: 0 0 0 4px ##213368, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
-	/* text-shadow: -1px -1px #AA9600; */
-	font-weight: normal;
+	text-shadow: -1px -1px #AA9600; 
+	
+
+	*/
 }
 .class {
 	width: 500px;
@@ -184,6 +190,20 @@ fieldset {
 
 textarea {
 	resize: vertical;
+}
+.error{
+	background: #FAD3C4;
+	border: 1px solid #A75B4E;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #444444;
+	font-size: 13px;
+	margin: 0px 0px 15px 0px;
+	padding: 8px 8px;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
 }
 .error_box {
 	background: #FAD3C4;
@@ -355,7 +375,6 @@ width:700px;
 }
 .class {
 	width: auto;
-	background: green;
 	margin-right: 10px;
 	margin-left: 10px;
 }

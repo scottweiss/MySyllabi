@@ -8,24 +8,25 @@ $password = $_POST["password"];
 $password2 = $_POST["password_confirm"];
 $password_hash = password_hash("$password", PASSWORD_DEFAULT);
 
-echo "<table><tr><td>username</td><td>" . $username . "</td></tr>" . 
-	 "<tr><td>email address</td><td>" . $email . "</td></tr>" . 
-	 "<tr><td>password</td><td>" . $password . "</td></tr>" .
-	 "<tr><td>password confirmation</td><td>" .$password2 . "</td></tr>" . 
-	 "<tr><td>password hash</td><td>" . $password_hash . "</td></tr></table>" ;
+$checkUsername=mysqli_query($con, "SELECT 'username' FROM `users` where username = '$username'");
+$usernameCheckRun =mysqli_num_rows($checkUsername);
 
-	 $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes");
+$checkEmail=mysqli_query($con, "SELECT 'email' FROM `users` where email = '$email'");
+$emailCheckRun =mysqli_num_rows($checkEmail);
 
-while($row = mysqli_fetch_array($result))
-  {
-  echo "<div class='class'>";
-  echo "<span class='clName'>" . $row['name'] . "</span> " . $row['classLocation'];
-  echo $row['professor'] . " " . $row['ampmStartTime']. " - " .  $row['ampmEndTime'] ;
-  echo "</div>";
-  }
 
+if($usernameCheckRun == 1){
+	header('Location: register.php?e=0');
+	
+}
+elseif ($emailCheckRun == 1){
+	header('Location: register.php?e=1');
+}
+else{
 $newUser = mysqli_query($con, "INSERT INTO users (userID, username, password, email)
 VALUES ('', '$username', '$password_hash', '$email')");
 
 header('Location: registerResult.php');
+}
+
 ?>
