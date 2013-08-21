@@ -29,10 +29,10 @@
     <div class="error_box"></div>
 
             <form name="register-form"action="registerNewUser.php" method="post">
-                <input class="loginInput" name="userName" class="mainSearch" placeholder="Enter your prefered user name">
-                <input class="loginInput" name="email" class="mainSearch" placeholder="Enter your email address">
-                <input class="loginInput" type="password" name="password" class="mainSearch" placeholder="Enter your password">
-                <input class="loginInput" type="password" name="password_confirm" class="mainSearch" placeholder="Reenter your password">
+                <input class="loginInput" name="userName" class="mainSearch" placeholder="Username">
+                <input class="loginInput" name="email" class="mainSearch" placeholder="Email">
+                <input class="loginInput" type="password" name="password" class="mainSearch" placeholder="Password">
+                <input class="loginInput" type="password" name="password_confirm" class="mainSearch" placeholder="Retype password">
                 <input class="loginInput" type="submit" name="submit" value="Register">
             </form>
         </div><!-- end of content -->
