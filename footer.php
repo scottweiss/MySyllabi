@@ -1,0 +1,1 @@
+<footer class="stiched">insert footer inforamtion in footer.php</footer><!-- End footer -->

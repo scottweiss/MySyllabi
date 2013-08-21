@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script>
+       function loadContent(){
+
+    var xmlhttp = getXmlHttpObject();               
+
+    xmlhttp.onreadystatechange=function()
+      {          
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("listContent").innerHTML=xmlhttp.responseText;
+
+        }
+      };
+    var url = "http://www.tbd.scottaweiss.com/something.txt";
+    xmlhttp.open("GET",url,true);
+    xmlhttp.send();
+        </script>
+    </head>
+    <body onload="loadContent()">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+       <div id="listContent"></div>
+		
+
+		<!-- End site content -->
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,4 @@
+function createUser($username, $password){
+if select username from users count !=0 raise error "username already taken"
+else add stipslashes(trim($username)) to users.username, password_hash($password, DEFAULT_PASSWORD) to users.password
+}
