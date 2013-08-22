@@ -7,7 +7,7 @@ $username = $_POST["userName"];
 $password = $_POST["password"];
 $password_hash = password_hash("$password", PASSWORD_DEFAULT);
 
-//$sql = "Select * from users where password = '$password_hash' AND (email = '$username' OR username = '$username'";
+//$sql = "Select * from users where password = '$password_hash' AND (email = '$username' OR username = '$username'"; 
 
 
 
