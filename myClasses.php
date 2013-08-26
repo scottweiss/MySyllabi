@@ -1,10 +1,10 @@
 <?php session_start(); 
-
 ?>
 <!DOCTYPE html>
-  
+
             <?php
             include ("header.php");
+            include 'php/connect.php'
             ?>
 
 
@@ -13,7 +13,7 @@
         <div id="sideBar">
 
              <?php
-             echo "Welcome " . $_SESSION["username"] . $_SESSION["ID"];
+             echo "Welcome " . $_SESSION["username"];
              
             include ("userNav.php");
             
@@ -25,7 +25,22 @@
 
 
         <div id="content" class="stiched">
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view. 
+           <div class="contentHead">My Classes</div> 
+           <?php
+
+
+
+    $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes");
+
+while($row = mysqli_fetch_array($result))
+  {
+  echo "<div class='class'>";
+  echo "<span class='clName'>" . $row['name'] . "</span> " . $row['classLocation'];
+  echo $row['professor'] . " " . $row['ampmStartTime']. " - " .  $row['ampmEndTime'] ;
+  echo "</div>";
+  }
+
+           ?>
         </div><!-- end of content -->
 
 
@@ -39,8 +54,8 @@
         
         ?>
 
-		</div>
-		<!-- End site content -->
+        </div>
+        <!-- End site content -->
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>

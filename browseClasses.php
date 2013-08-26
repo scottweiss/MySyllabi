@@ -1,32 +1,45 @@
-<!DOCTYPE html>
-    <?php
+<?php session_start(); 
 
-    $index = true;
+?>
+<!DOCTYPE html>
+
+
+            <?php
             include ("header.php");
-        ?>
+            ?>
+
 
     <div id="mainContent">
 
         <div id="sideBar">
-            
-             <?php
-            include ("php/login.php");
-            ?>
 
+             <?php
+             echo "Welcome " . $_SESSION["username"];
+             
+            include ("userNav.php");
+            
+
+             ?>
+            
         </div><!-- end of sidebar -->
 
-        <div id="content" class="stiched">
 
+
+        <div id="content" class="stiched">
             
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view. 
-        
+            <div class="contentHead">Browse Classes</div> 
+            <form>
+                <input type="text">  <input type="submit" value="Search">
+            </form>
+            <a href="addClasses.php">Add a Class</a>
         </div><!-- end of content -->
 
 
         <div class="clearfix"></div>
 
     </div>
-<?php
+
+        <?php
 
             include ("footer.php");
         

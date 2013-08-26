@@ -1,6 +1,6 @@
 <ul>
-	<li>My Classes</li>
-	<li>Calendar View</li>
-	<li>Browse Classes</li>
-	<li>Account Settings</li>
+	<li><a href="myClasses.php">My Classes</a></li>
+	<li><a href="#">Calendar View</a></li>
+	<li><a href="browseClasses.php">Browse Classes</a></li>
+	<li><a href="#">Account Settings</a></li>
 </ul>

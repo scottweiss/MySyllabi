@@ -102,6 +102,13 @@ select, button, input {
 	-webkit-box-shadow: 1px 3px 3px rgba(0,0,0,0.3);
 	box-shadow: 1px 3px 3px rgba(0,0,0,0.3);
 }
+.contentHead{
+	width:auto;
+	text-align: left;
+	font-size: 20px;
+	background-color: green;
+	padding: 10px 0px;
+}
 .clear {
 	clear: both;
 }

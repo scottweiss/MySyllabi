@@ -1,4 +1,13 @@
-<head>
+<?php
+
+if (!isset($_SESSION['username'])&& $index != true) {
+    header('Location: index.php');
+    exit();
+}
+elseif (!isset($index)){
+echo "<input type='button' onclick='location.href=\"logout.php\"' value='logout'> This will be moved";     
+}
+?><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
@@ -29,7 +38,7 @@
     </form>
 
     <span class="title">MySylla.bi</span>
-    <span class="tagline">100% juice</span>Steph is working on the look of this shithole
+    <span class="tagline">Keeping schedule one class at a time.</span>
 
    <div class="clearfix"></div>
 

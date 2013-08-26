@@ -12,12 +12,13 @@ $password_hash = password_hash("$password", PASSWORD_DEFAULT);
 
 
 
-$result=mysqli_query($con, "SELECT username, password FROM `users` WHERE username='$username' or email='$username' ");
+$result=mysqli_query($con, "SELECT username, password, userID FROM `users` WHERE username='$username' or email='$username' ");
 
 // Mysql_num_row is counting table row
 $getpass = mysqli_fetch_array($result);
 $hash = $getpass['password'];
 $username = $getpass['username'];
+$id = $getpass['userID'];
 
 $count=mysqli_num_rows($result);
 $rowcount=mysqli_num_rows($result);
@@ -27,6 +28,7 @@ $rowcount=mysqli_num_rows($result);
 if (password_verify($password, $hash)) {
     echo 'Password is valid!';
     $_SESSION["username"] = $username;
+    $_SESSION["ID"] = $id;
     header("location: ../home.php");
 } else {
     echo 'Invalid password.';
