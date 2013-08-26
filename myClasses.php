@@ -25,7 +25,7 @@
 
 
         <div id="content" class="stiched">
-           <div class="contentHead">My Classes</div> 
+           <div class="contentHead">My Classes</div>  This be a work in progress!
            <?php
 
 

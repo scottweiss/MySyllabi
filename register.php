@@ -1,6 +1,7 @@
 <!DOCTYPE html>
    
             <?php
+            $index = true;
             include ("header.php");
             ?>
 

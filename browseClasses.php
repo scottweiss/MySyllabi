@@ -6,6 +6,7 @@
 
             <?php
             include ("header.php");
+            include ("php/connect.php")
             ?>
 
 
@@ -27,15 +28,32 @@
 
         <div id="content" class="stiched">
             
-            <div class="contentHead">Browse Classes</div> 
-            <form>
-                <input type="text">  <input type="submit" value="Search">
+            <div class="contentHead">Browse Classes <a href="addClasses.php">Add a Class</a></div> 
+            <form class="fullWidth">
+                <?php
+
+                $getSchoolList = mysqli_query($con,"SELECT * FROM school");
+                echo "<select onchange='showUser(this.value)'>\n<option selected>Pick a School</option>\n";
+
+                while($row = mysqli_fetch_array($getSchoolList))
+                  {
+
+                  echo "<option name='school' value='" . $row['ID'] . "'>" . $row['schoolName'] . "</option>\n";
+
+                  }
+                  echo "</select>";
+
+                ?>
+
+                <div id="txtHint"></div>
             </form>
-            <a href="addClasses.php">Add a Class</a>
+            
         </div><!-- end of content -->
 
 
         <div class="clearfix"></div>
+
+        
 
     </div>
 

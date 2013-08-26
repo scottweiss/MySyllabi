@@ -31,18 +31,25 @@ body {
 }
 #header {
 	margin-bottom: 15px;
+	background-color: white;
+
+}
+
+#logodiv{
+background-color: white;
+width: 100%;
 }
 #logo{
-	height:186px;
-	width: 184px;
-	background-image: url("../img/MySyllabi_Logo_Icon.gif");
+	height:220px;
+	width: 217px;
+	background-image: url("../img/goodMySyllabi_Logo.gif");
 	float: left;
 
 }
 #logoText{
-height:186px;
-width: 387px;
-	background-image: url("../img/MySyllabi_Logo_Text.gif");
+height:220px;
+width: 355px;
+	background-image: url("../img/goodMySyllabi_Text.gif");
 	float: left;
 }
 #main {
@@ -152,6 +159,11 @@ select, button, input {
 	
 
 	*/
+}
+
+.fullWidth{
+	width: 100%;
+	max-width: 100%;
 }
 .class {
 	width: 500px;
@@ -388,6 +400,10 @@ body {
 #main {
 width:700px;
 }
+#content {
+	width: auto;
+
+}
 }
  @media screen and (max-width: 750px) {
 #main {
@@ -398,6 +414,30 @@ width:700px;
 	margin-right: 10px;
 	margin-left: 10px;
 }
+
+#logo{
+	height:220px;
+	width: 217px;
+	float: none;
+	margin: 0 auto;
+
+}
+#logoText{
+
+float: none;
+margin: 0 auto;
+}
+#sideBar{
+	float: none;
+}
+#content {
+	width: auto;
+float: none;
+}
+.contentHead{
+	width:100%;
+}
+
 }
  @media screen and (max-width: 540px) {
 }
