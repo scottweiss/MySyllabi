@@ -39,6 +39,11 @@ echo "<input type='button' onclick='location.href=\"logout.php\"' value='logout'
 
     <span class="title">MySylla.bi</span>
     <span class="tagline">Keeping schedule one class at a time.</span>
+    <div id="logodiv">
+        <div id="logo" height="186px"></div>
+        <div id="logoText"></div>
+
+    </div>
 
    <div class="clearfix"></div>
 
