@@ -422,9 +422,13 @@ width:700px;
 	margin: 0 auto;
 
 
-
 }
 #logoText{
+background-image: url("../img/goodMySyllabi_Logo_cropped.gif");
+width:355px;
+height: 123px;
+
+
 
 float: none;
 margin: 0 auto;
