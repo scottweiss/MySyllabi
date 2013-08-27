@@ -29,7 +29,7 @@
                 <?php
 
                 $getSchoolList = mysqli_query($con,"SELECT * FROM school");
-                echo "<select onchange='showUser(this.value)'>\n<option selected>Pick a School</option>\n";
+                echo "<select onchange='addSubject(this.value)'>\n<option selected>Pick a School</option>\n";
 
                 while($row = mysqli_fetch_array($getSchoolList))
                   {
@@ -41,8 +41,8 @@
 
                 ?>
 
-                <div id="txtHint"></div>
-               
+                <div id="addSubjectSelect"></div>
+                <div id="addClassForm"></div>
             </form>
         </div><!-- end of content -->
 

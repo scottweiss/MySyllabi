@@ -20,6 +20,9 @@ switch ($error) {
     case 2:
         echo "Invalid username, email, or passowrd.";
         break;
+    case 3:
+        echo "Sorry, that function hasn't been created yet.";
+        break;
 }
 
 echo "</div>";

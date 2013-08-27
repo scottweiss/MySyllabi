@@ -12,14 +12,14 @@
 <ul>
    <li class='active'><a href='myClasses.php'><span>My Classes</span></a></li>
    <li><a href='browseClasses.php'><span>Browse Classes</span></a></li>
-   <li class='has-sub'><a href='calendarView.php'><span>Calendar View</span></a>
+   <li class='has-sub'><a href='?e=3'><span>Calendar View</span></a>
       <ul>
-         <li><a href='calendarView.php?v=t'><span>Term</span></a></li>
-         <li><a href='calendarView.php?v=w'><span>Weekly</span></a></li>
-         <li class='last'><a href='calendarView.php?v=a'><span>Adgenda</span></a></li>
+         <li><a href='?e=3'><span>Term</span></a></li>
+         <li><a href='?e=3'><span>Weekly</span></a></li>
+         <li class='last'><a href='?e=3'><span>Adgenda</span></a></li>
       </ul>
    </li>
-   <li><a href='accountSettings.php'><span>Account Setings</span></a></li>
+   <li><a href='?e=3'><span>Account Setings</span></a></li>
    <li class='last'><a href='logout.php'><span>Logout</span></a></li>
 </ul>
 </div>

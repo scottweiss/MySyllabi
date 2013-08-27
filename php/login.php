@@ -6,4 +6,4 @@
 	<input class="loginInput" type="submit" value="Login">
 </form>
 
-<a href="forgotPassword.php">Forgot password?</a>
+<a href="index.php?e=3">Forgot password?</a>
