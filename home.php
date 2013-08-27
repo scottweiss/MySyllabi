@@ -13,7 +13,7 @@
         <div id="sideBar">
 
              <?php
-             echo "Welcome " . $_SESSION["username"] . $_SESSION["ID"];
+             echo "Welcome " . $_SESSION["username"];
              
             include ("userNav.php");
             
