@@ -4,9 +4,9 @@ if (!isset($_SESSION['username'])&& $index != true) {
     header('Location: index.php');
     exit();
 }
-elseif (!isset($index)){
-echo "<input type='button' onclick='location.href=\"logout.php\"' value='logout'> This will be moved";     
-}
+// elseif (!isset($index)){
+// echo "<input type='button' onclick='location.href=\"logout.php\"' value='logout'> This will be moved";     
+// }
 ?><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
