@@ -159,7 +159,31 @@ select, button, input {
 	text-shadow: -1px -1px #AA9600; 
 	
 
-	*/
+*/
+}
+
+nav ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+border: 1px black;	
+}
+nav a
+{
+display:block;
+padding:5px;
+padding-left:15px;
+	background: rgba(0, 0, 0, 0.4);
+text-decoration: none;
+
+
+}
+nav ul li{
+font-size: 25px;
+border-bottom: 1px #eee solid;
+border-top:  1px #ccc solid;	
+
 }
 
 .fullWidth{
