@@ -7,7 +7,7 @@ $sql="SELECT * FROM subject WHERE schoolID = '".$q."'";
 
 $result = mysqli_query($con,$sql);
 
-echo "<select><option selected>Pick a subject.</option>";
+echo "<select onchange='getClassList(this.value)'><option selected>Pick a subject.</option>";
 
 while($row = mysqli_fetch_array($result))
   {

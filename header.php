@@ -41,7 +41,7 @@ echo "<input type='button' onclick='location.href=\"logout.php\"' value='logout'
 
 -->
     <div id="logodiv">
-        <div id="logo" height="186px"></div>
+        <div id="logo"></div>
         <div id="logoText"></div>
 
     </div>

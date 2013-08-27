@@ -4,6 +4,7 @@
   
             <?php
             include ("header.php");
+            include "php/connect.php";
             ?>
 
 
@@ -24,8 +25,25 @@
 
 
         <div id="content" class="stiched">
-            <a href="createNewClass.php">Create a new class.</a>
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view. 
+            <form class="fullWidth">
+                <?php
+
+                $getSchoolList = mysqli_query($con,"SELECT * FROM school");
+                echo "<select onchange='showUser(this.value)'>\n<option selected>Pick a School</option>\n";
+
+                while($row = mysqli_fetch_array($getSchoolList))
+                  {
+
+                  echo "<option name='school' value='" . $row['ID'] . "'>" . $row['schoolName'] . "</option>\n";
+
+                  }
+                  echo "</select>";
+
+                ?>
+
+                <div id="txtHint"></div>
+               
+            </form>
         </div><!-- end of content -->
 
 

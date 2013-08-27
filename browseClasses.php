@@ -46,6 +46,17 @@
                 ?>
 
                 <div id="txtHint"></div>
+                <div id="classTable"><table>
+<?php
+ $sql="SELECT * FROM classes";
+    $relClasses = mysqli_query($con,$sql);
+    while($relClass = mysqli_fetch_array($relClasses))
+  echo "<tr><td>" . $relClass['name'] . "</td><td><input type='button' value='add'>\n";
+
+?>
+
+</table>
+                </div>
             </form>
             
         </div><!-- end of content -->
