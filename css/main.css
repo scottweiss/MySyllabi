@@ -108,6 +108,9 @@ width: 355px;
 	float: left;
 
 }
+i{
+	font-size: 20px;
+}
 form {
 	max-width: 500px;
 	margin: 0 auto;
@@ -481,6 +484,40 @@ a:hover {color: rgba(232,143,51,1);}
 	margin-top:10px; 
 }
 
+
+.facebook {
+position: relative;
+font-size: 20px;
+height: 2em;
+width: 2em;
+background: #2C2C2C;
+display: block;
+border-radius: 0.3em;
+}
+
+.facebook::before {
+left: 0.85em;
+top: 0.7em;
+position: absolute;
+display: block;
+content: "";
+height: 0.3em;
+width: 0.85em;
+background: #EDEEE8;
+}
+.facebook::after {
+left: 1.1em;
+top: 0.1em;
+position: absolute;
+display: block;
+content: "";
+height: 1.5em;
+width: 0.3em;
+border-radius: 0.4em 0 0 0;
+border: 0.3em solid #EDEEE8;
+border-right: 0;
+border-bottom: 0;
+}
 
 /* ==========================================================================
    Helper classes

@@ -18,7 +18,7 @@ switch ($error) {
         echo "That email address is already taken. Please use a different email address";
         break;
     case 2:
-        echo "Invalid username, email, or passowrd.";
+        echo "Invalid username, email, or password.";
         break;
     case 3:
         echo "Sorry, that function hasn't been created yet.";
