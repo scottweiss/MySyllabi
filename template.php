@@ -3,6 +3,7 @@
 
     $index = true;
             include ("header.php");
+            include ("php/connect.php");
         ?>
 
     <div id="mainContent">
@@ -18,7 +19,17 @@
         <div id="content" class="stiched">
 
             
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view. 
+             <div class='class'>
+  <div class='clName'><a href='viewClass.php?class=1'>INFO 101</a></div> 
+
+<table>
+    <tr><th>Instructor:</th><td>Prof. Scott Weiss</td></tr>
+    <tr><th>Section:</th><td>001</td></tr>
+    <tr><th>Class Location:</th><td>RUSH 205</td></tr>
+    <tr><th>Time:</th><td>2:00 PM - 3:50 PM</td></tr>
+</table>
+
+  </div><!-- end of class -->
         
         </div><!-- end of content -->
 
@@ -28,8 +39,13 @@
     </div>
 <?php
 
+$result = mysqli_query($con,"SELECT TIME_FORMAT('16%3A03', '%l:%i %p') as 'ampmStartTime'");
+
+while($row = mysqli_fetch_array($result)){
+    echo $row['ampmStartTime'];
+};
+
             include ("footer.php");
-        
         ?>
 
         </div>

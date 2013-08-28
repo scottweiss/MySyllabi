@@ -23,6 +23,9 @@ switch ($error) {
     case 3:
         echo "Sorry, that function hasn't been created yet.";
         break;
+    case 4:
+        echo "Congratulations! Your account has been created and you may now login.";
+        break;
 }
 
 echo "</div>";

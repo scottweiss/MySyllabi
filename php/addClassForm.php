@@ -18,11 +18,10 @@ $result = mysqli_query($con,$sql);
 
  
 //   }
-// echo "</select>";
+ echo "<form action=\"php/createClassScript.php\" method=\"post\" id=\"createClassForm\">";
 while($subject = mysqli_fetch_array($result))
   {
 echo "
-<form>
  				<label for=\"className\">
                     Class Name:
                     <input class=\"loginInput\" type=\"text\" name=\"className\" id=\"field1\" placeholder=\"" . $subject['subjectCode']  . " 101\"required=\"required\">
@@ -30,15 +29,22 @@ echo "
 
                <label for=\"professor\">
                     Professor's Name:
-                    <input class=\"loginInput\" type=\"text\" name=\"professor\" id=\"field1\" placeholder=\"Prof. Anthony Drexel\" required=\"required\">
+                    <input class=\"loginInput\" type=\"text\" name=\"professor\" id=\"field2\" placeholder=\"Prof. Anthony Drexel\" required=\"required\">
                </label>
 
                <label for=\"classSection\">
                     Class Section:
-                    <input class=\"loginInput\" type=\"text\" name=\"classSection\" id=\"field1\" placeholder=\"001\" required=\"required\">
+                    <input class=\"loginInput\" type=\"text\" name=\"classSection\" id=\"field3\" placeholder=\"001\" required=\"required\">
                </label>
-               
-</form>";
-}
 
+               <label for=\"classLocation\">
+                    Class Location:
+                    <input class=\"loginInput\" type=\"text\" name=\"classLocation\" id=\"field4\" placeholder=\"Building Room #\" required=\"required\">
+               </label>
+               <input type=\"text\" value=\"" . $q. "\" name=\"classSubjectID\" class=\"hidden\">
+              
+               <input type=\"submit\" value=\"Create Class\" formaction=\"php/createClassScript.php\" formmethod=\"post\">
+";
+}
+echo "</form>";
 ?>

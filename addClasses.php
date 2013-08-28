@@ -25,7 +25,7 @@
 
 
         <div id="content" class="stiched">
-            Work in progress
+            <div class="contentHead"><a href='browseClasses.php'>Browse Classes</a></div>  &nbsp; &nbsp; &#8594; &nbsp; &nbsp; <div class="contentHead">Create a Class</div> 
             <form class="fullWidth">
                 <?php
 

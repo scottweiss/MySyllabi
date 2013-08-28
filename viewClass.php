@@ -1,10 +1,11 @@
 <?php session_start(); 
+$classID = $_GET['class'];
 ?>
 <!DOCTYPE html>
-
+  
             <?php
             include ("header.php");
-            include ("php/connect.php");
+            include "php/connect.php";
             ?>
 
 
@@ -13,7 +14,7 @@
         <div id="sideBar">
 
              <?php
-            
+             
              
             include ("userNav.php");
             
@@ -25,12 +26,11 @@
 
 
         <div id="content" class="stiched">
-           <div class="contentHead">My Classes</div> (this currently just lists ALL of the classes in the system, not classes you have joined.)
-           <?php
+         
 
-
-
-    $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes");
+            <?php 
+            
+              $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes WHERE ID='$classID'");
 
 while($row = mysqli_fetch_array($result))
   {
@@ -44,20 +44,8 @@ while($row = mysqli_fetch_array($result))
   echo "</table>";
   echo "</div>";
 }
-
-
-
-// <table>
-//     <tr><th>Instructor:</th><td>Prof. Scott Weiss</td></tr>
-//     <tr><th>Section:</th><td>001</td></tr>
-//     <tr><th>Class Location:</th><td>RUSH 205</td></tr>
-//     <tr><th>Time:</th><td>2:00 PM - 3:50 PM</td></tr>
-// </table>
-
-
-
-
-           ?>
+            ?>
+            
         </div><!-- end of content -->
 
 

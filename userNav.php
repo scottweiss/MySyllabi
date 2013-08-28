@@ -11,7 +11,11 @@
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='myClasses.php'><span>My Classes</span></a></li>
-   <li><a href='browseClasses.php'><span>Browse Classes</span></a></li>
+   <li class='has-sub'><a href='browseClasses.php'><span>Join a  Class</span></a>
+      <ul>
+            <li class='last'><a href='addClasses.php'><span>Create a Class</span></a></li>
+         </ul>
+      </li>
    <li class='has-sub'><a href='?e=3'><span>Calendar View</span></a>
       <ul>
          <li><a href='?e=3'><span>Term</span></a></li>

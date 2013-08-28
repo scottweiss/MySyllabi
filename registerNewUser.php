@@ -26,7 +26,7 @@ else{
 $newUser = mysqli_query($con, "INSERT INTO users (userID, username, password, email)
 VALUES ('', '$username', '$password_hash', '$email')");
 
-header('Location: registerResult.php');
+header('Location: index.php?e=4');
 }
 
 ?>
