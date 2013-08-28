@@ -6,11 +6,22 @@ $professor = $_POST["professor"];
 $section = $_POST["classSection"];
 $location = $_POST["classLocation"];
 $subjectID = $_POST["classSubjectID"];
+$startTime = $_POST["startTime"];
+$endTime = $_POST["endTime"];
 $userID = $_SESSION["ID"];
 
 
-$newClass = mysqli_query($con, "INSERT INTO classes (ID, creatorID, name, section, professor, classLocation)
-VALUES ('', '$userID', '$className', '$section', '$professor', '$location')");
+$startTimeArray = explode("%3A", $startTime);
+$startTimeFinal =  $startTimeArray[0] . ":" .  $startTimeArray[1]. ":00";
+
+$endTimeArray = explode("%3A", $endTime);
+$endTimeFinal =  $endTimeArray[0] . ":" .  $endTimeArray[1]. ":00";
+
+
+
+
+$newClass = mysqli_query($con, "INSERT INTO classes (ID, creatorID, name, section, professor, classLocation, startTime, endTime)
+VALUES ('', '$userID', '$className', '$section', '$professor', '$location', '$startTimeFinal', '$endTimeFinal')");
 
 $getClassID = mysqli_query($con, "Select ID FROM `classes` WHERE creatorID='$userID' and name='$className' and section='$section' and professor = '$professor' and classLocation = '$location'");
 

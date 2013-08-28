@@ -39,11 +39,9 @@
     </div>
 <?php
 
-$result = mysqli_query($con,"SELECT TIME_FORMAT('16%3A03', '%l:%i %p') as 'ampmStartTime'");
-
-while($row = mysqli_fetch_array($result)){
-    echo $row['ampmStartTime'];
-};
+$time = '15%3A30';
+$times = explode("%3A", $time);
+echo $times[0] . ":" .  $times[1]. ":00";
 
             include ("footer.php");
         ?>
