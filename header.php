@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['username'])&& $index != true) {
+if (!isset($_SESSION['username']) && $index != true) {
     header('Location: index.php');
     exit();
 }
@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])&& $index != true) {
 ?><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>MySylla.bi</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -30,7 +30,7 @@ if (!isset($_SESSION['username'])&& $index != true) {
         
         <div id="main">
 
-<div id="header" class="stiched">
+<div id="header">
 <!--<form action="mainSearch.php" class="fRight">
         <input type="search" name="classSearch" class="mainSearch" placeholder="Search">
         <input type="submit">
@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])&& $index != true) {
     <span class="tagline">Keeping schedule one class at a time.</span>
 
 -->
-    <div id="logodiv">
+    <div id="logodiv" onclick="location.href='home.php';">
         <div id="logo"></div>
         <div id="logoText"></div>
 

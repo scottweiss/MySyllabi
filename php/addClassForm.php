@@ -25,7 +25,7 @@ echo "
 <form>
  				<label for=\"className\">
                     Class Name:
-                    <input class=\"loginInput\" type=\"text\" name=\"className\" id=\"field1\" placeholder=\" " . $subject['subjectCode']  . " 101\"required=\"required\">
+                    <input class=\"loginInput\" type=\"text\" name=\"className\" id=\"field1\" placeholder=\"" . $subject['subjectCode']  . " 101\"required=\"required\">
                </label>
 
                <label for=\"professor\">

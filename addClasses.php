@@ -25,6 +25,7 @@
 
 
         <div id="content" class="stiched">
+            Work in progress
             <form class="fullWidth">
                 <?php
 

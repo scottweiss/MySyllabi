@@ -19,14 +19,20 @@
    orange      : rgba(232,143,51,1);
 
    ========================================================================== */
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Lato:300,400,700);
 html, button, input, select, textarea {
 	color: #222;
 }
 html, body {
 	height: 100%;
-		background-image: url("../img/pw_maze_white.png");
+		background-image: url("../img/diamond_upholstery.png");
+		/*bright_squares.png*/
+		/*pw_maze_white.png*/
+		/*diamond_upholstery.png*/
+		/* font-family: 'Lato', sans-serif;
+		font-family: 'Open Sans', sans-serif;*/
 }
+
 body {
 	font-size: 1em;
 	line-height: 1.4;
@@ -36,6 +42,7 @@ body {
 #header {
 	margin-bottom: 15px;
 	background-color: white;
+		margin: 10px;
 
 }
 
@@ -151,7 +158,7 @@ select, button, input {
 	font-weight: bold;
 	line-height: 1.3em;
 	font-weight: normal;
-	background: rgba(78,191,189,.3);;
+	background: rgba(78,191,189,.3);
 
 /*
 	background: #213368;
@@ -209,11 +216,11 @@ border-top:  1px #ccc solid;
  */
 
 ::-moz-selection {
- background: #b3d4fc;
+ background: #e88f33;
  text-shadow: none;
 }
 ::selection {
-	background: #b3d4fc;
+	background: #e88f33;
 	text-shadow: none;
 }
 /*
