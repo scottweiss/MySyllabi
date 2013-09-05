@@ -24,7 +24,7 @@
 
 
         <div class="clearfix"></div>
-
+<button onclick="Tinycon.setBubble(1);">press to change favicon</button>
     </div>
 <?php
 
@@ -34,9 +34,8 @@
 
 		</div>
 		<!-- End site content -->
-        <script src="js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+       
+
 
         
     </body>
