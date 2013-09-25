@@ -41,7 +41,7 @@ body {
 }
 #header {
 	margin-bottom: 15px;
-	background-color: white;
+	/*background-color: white;*/
 		margin: 10px;
 
 }
@@ -52,16 +52,20 @@ width: 100%;
 }
 #logo{
 	height:220px;
-	width: 217px;
-	background-image: url("../img/goodMySyllabi_Logo.gif");
+	width: 220px;
+	background-image: url("../img/icon.gif");
 	float: left;
+
 
 }
 #logoText{
 height:220px;
 width: 355px;
-	background-image: url("../img/goodMySyllabi_Text.gif");
+/*	background-image: url("../img/goodMySyllabi_Text.gif");*/
 	float: left;
+	line-height: 220px;
+	font-size: 80px;
+	padding-left: 25px;
 }
 #main {
 	width: 900px;

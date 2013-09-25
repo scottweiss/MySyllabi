@@ -44,7 +44,7 @@ if (!isset($_SESSION['username']) && $index != true) {
 -->
     <div id="logodiv" onclick="location.href='home.php';">
         <div id="logo"></div>
-        <div id="logoText"></div>
+        <div id="logoText">MySyllabi</div>
 
     </div>
 
