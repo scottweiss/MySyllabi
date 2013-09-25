@@ -47,7 +47,7 @@ body {
 }
 
 #logodiv{
-background-color: white;
+/*background-color: white;*/
 width: 100%;
 }
 #logo{
@@ -669,11 +669,11 @@ float: none;
 
 }
 #logoText{
-background-image: url("../img/goodMySyllabi_Logo_cropped.gif");
+/*background-image: url("../img/goodMySyllabi_Logo_cropped.gif");*/
 width:355px;
 height: 123px;
 
-
+line-height: 1em;
 
 float: none;
 margin: 0 auto;
