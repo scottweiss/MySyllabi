@@ -6,7 +6,6 @@
         ?>
 
     <div id="mainContent">
-
         <div id="sideBar">
             
              <?php

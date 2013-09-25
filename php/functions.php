@@ -15,4 +15,9 @@ while($rowww = mysqli_fetch_array($echotable))
 function createUser($username, $password){
 echo $username . password_hash($password, PASSWORD_DEFAULT);
 }
+
+
+function 
+
+
 ?>
