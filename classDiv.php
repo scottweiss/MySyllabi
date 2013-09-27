@@ -1,21 +1,4 @@
 <?php
-function displayType($dType)
-{
-require 'connect.php';
-echo $dType;
-$echotable = mysqli_query($con,"SELECT * FROM ". $dType ."Type");
-echo "<table>";
-while($rowww = mysqli_fetch_array($echotable))
-  {
-  echo "<tr><td>" . $rowww['ID'] . "</td><td>" . $rowww[$dType . 'Type'] . "</td></tr>";
-  }
-  echo "</table>";
-}
-
-function createUser($username, $password){
-echo $username . password_hash($password, PASSWORD_DEFAULT);
-}
-
 
 function displayClass($ID){
 include ("php/connect.php");
@@ -30,16 +13,14 @@ while($row = mysqli_fetch_array($result))
   echo "<tr><th>Section:</th><td>" . $row['section'] . "</td></tr>";
   echo "<tr><th>Class Location:</th><td>" . $row['classLocation']. "</td></tr>";
   echo "<tr><th>Class Time:</th><td>" . $row['ampmStartTime']. " - " .  $row['ampmEndTime'] . "</td></tr>";
-  echo "</table>";
+
   if($row["creatorID"] == $_SESSION["ID"]){
-echo "<input type='button' value='Add Assignments'></input>";
+echo "<input type='button' value='Add Assignment'></input>";
 }
 
-
+  echo "</table>";
   echo "</div>";
 }
 
 }
-
-
 ?>

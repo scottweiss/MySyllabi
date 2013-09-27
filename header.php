@@ -53,4 +53,5 @@ if (!isset($_SESSION['username']) && $index != true) {
 </div><!-- end of header -->
 <?php
             include ("php/errors.php");
+            include ("php/functions.php");
             ?>

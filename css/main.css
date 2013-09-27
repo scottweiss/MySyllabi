@@ -67,7 +67,7 @@ width: 100%;
 	background-image: url("../img/icon.gif");
 	float: left;
 -webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         300s; 
+    -webkit-animation-duration:         400s; 
     -webkit-animation-iteration-count:  infinite;
     -webkit-animation-timing-function: linear;
 
