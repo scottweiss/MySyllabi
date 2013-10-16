@@ -52,24 +52,12 @@ body {
 width: 100%;
 }
 
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to { 
-    -webkit-transform: rotate(360deg);
-  }
-}
 
 #logo{
 	height:220px;
 	width: 220px;
 	background-image: url("../img/icon.gif");
 	float: left;
--webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         400s; 
-    -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear;
 
 }
 #logoText{
@@ -113,6 +101,16 @@ width: 355px;
 .loginInput:last-child {
 	margin-bottom: 10px;
 }
+.formInput[type="submit"] {
+	display: block;
+	position: relative;
+	width: 40%;
+	height: auto;
+	margin-right: 20px;
+	margin-left: auto;
+	padding: 10px;
+
+}
 .alignRight {
 	text-align: right;
 	float: right;
@@ -130,7 +128,7 @@ i{
 	font-size: 20px;
 }
 form {
-	max-width: 500px;
+	/*max-width: 500px;*/
 	margin: 0 auto;
 }
 #footer {

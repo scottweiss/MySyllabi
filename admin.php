@@ -15,7 +15,9 @@
         </div><!-- end of sidebar -->
 
         <div id="content" class="stiched">
-            MySylla.bi is an application that allows students to share their class schedules and assignments with their classmates through crowd-sourcing for an interactive and collaborative way to stay on schedule. View your course content in an agenda, monthly, or weekly view.
+            <h2>View Users</h2>
+            <h2>Active Flags</h2>
+            
         </div><!-- end of content -->
 
         <div class="clearfix"></div>
