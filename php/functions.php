@@ -41,9 +41,12 @@ echo "<input type='button' value='Add Assignments'></input>";
 
 }
 
+
+
 function deleteUser($userID){
 include ("php/connect.php");
 $result = mysqli_query($con,"DELETE * From classes WHERE `ID` = '$userID'");
+   header("location: ../admin.php?e=5");
 }
 
 function deleteClass(){

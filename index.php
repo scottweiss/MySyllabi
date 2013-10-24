@@ -23,19 +23,13 @@
 
 
         <div class="clearfix"></div>
-<button onclick="Tinycon.setBubble(1);">press to change favicon</button>
+<!-- <button onclick="Tinycon.setBubble(1);">press to change favicon</button> -->
     </div>
-<?php
-
-            include ("footer.php");
-        
-        ?>
+    <?php
+        include ("footer.php");   
+    ?>
 
 		</div>
 		<!-- End site content -->
-       
-
-
-        
     </body>
 </html>

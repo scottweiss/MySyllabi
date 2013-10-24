@@ -21,6 +21,16 @@ if (!isset($_SESSION['username']) && $index != true) {
        
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+<style type="text/css" title="currentStyle">
+    @import "DataTables/media/css/demo_table.css";
+</style>
+
+<style type="text/css">
+                @import "DataTables/examples_support/syntax/css/shCore.css";
+            </style>
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
+
     </head>
 
     <body>
@@ -54,5 +64,6 @@ if (!isset($_SESSION['username']) && $index != true) {
 <?php
 include ("php/connect.php");
             include ("php/errors.php");
+            include ("php/success.php");
             include ("php/functions.php");
             ?>

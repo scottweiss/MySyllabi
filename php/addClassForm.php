@@ -43,18 +43,22 @@ echo "
                </label>
                <input type=\"text\" value=\"" . $q. "\" name=\"classSubjectID\" class=\"hidden\">
 
-               <label for=\"startTime\">
-                    Start Time:
-                    <input class=\"loginInput\" type=\"time\" name=\"startTime\" id=\"field5\"  required=\"required\">
-               </label>
-              
-              <label for=\"endTime\">
-                    End Time:
-                    <input class=\"loginInput\" type=\"time\" name=\"endTime\" id=\"field6\"  required=\"required\">
-               </label>
 
-               <input type=\"submit\" value=\"Create Class\" formaction=\"php/createClassScript.php\" formmethod=\"post\">
+               <button type=\"submit\" value=\"Create Class\" name=\"testing\" formaction=\"php/createClassScript.php\" formmethod=\"post\">Create Class</button>
 ";
 }
 echo "</form>";
+
+//INputs for time for above form
+              //  <label for=\"startTime\">
+              //       Start Time:
+              //       <input class=\"loginInput\" type=\"time\" name=\"startTime\" id=\"field5\"  required=\"required\">
+              //  </label>
+              
+              // <label for=\"endTime\">
+              //       End Time:
+              //       <input class=\"loginInput\" type=\"time\" name=\"endTime\" id=\"field6\"  required=\"required\">
+              //  </label>
+
+
 ?>

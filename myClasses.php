@@ -20,14 +20,16 @@
 
         <div id="content" class="stiched">
 
-           <div class="contentHead">My Classes</div> (this currently just lists ALL of the classes in the system, not classes you have joined.)
+           <div class="contentHead">My Classes</div> 
 
            <?php
-           $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes");
+           // $result = mysqli_query($con,"SELECT *, TIME_FORMAT(startTime, '%l:%i %p') as 'ampmStartTime', TIME_FORMAT(endTime, '%l:%i %p') as 'ampmEndTime' FROM classes INNER JOIN userClasses ON userClasses.userID = $_SESSION[ID]");
 
+
+$result = mysqli_query($con,"SELECT * FROM userClasses where userClasses.userID = $_SESSION[ID]");
           while($row = mysqli_fetch_array($result))
             {
-            displayClass($row['ID']); 
+            displayClass($row['classID']); 
             }
             
           ?>

@@ -11,16 +11,16 @@
 <div id='cssmenu'>
 <ul>
 <?php
-$result=mysqli_query($con, "SELECT * FROM `admin` WHERE userID='" . $_SESSION["ID"] . "'");
+$result77=mysqli_query($con, "SELECT * FROM `admin` WHERE userID='" . $_SESSION["ID"] . "'");
 if (
-$count=mysqli_num_rows($result) == 1)
+$count=mysqli_num_rows($result77) == 1)
 
 
 echo "<li class='has-sub'><a href='admin.php'><span>Admin Settings</span></a>
 <ul>
-            <li><a href='createAdminUser.php'><span>Create Admin User</span></a></li>
-            <li><a href='?e=3'><span>View Users</span></a></li>
-            <li class='last'><a href='?e=3'><span>Active Flags</span></a></li>
+            <li><a href='?e=3''><span>Create Admin User</span></a></li>
+            <li><a href='admin.php#viewUsers'><span>View Users</span></a></li>
+            <li class='last'><a href='admin.php#viewFlags'><span>Active Flags</span></a></li>
          </ul>
          </li>";
    
