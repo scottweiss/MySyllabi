@@ -13,7 +13,9 @@ switch ($success) {
     case 2:
         echo "An Assignment has been created!" ;
         break;
-
+    case 3:
+        echo "Assignment Updated!";
+        break;
 }
 
 echo "</div>";

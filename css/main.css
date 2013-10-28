@@ -111,6 +111,14 @@ width: 355px;
 	padding: 10px;
 
 }
+.assignmentTable td{
+
+	padding:0 10px;
+}
+.tableButton{
+	padding:3px;
+	margin: 0 auto;
+}
 .alignRight {
 	text-align: right;
 	float: right;
