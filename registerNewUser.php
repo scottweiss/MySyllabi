@@ -36,7 +36,28 @@ else{
 $newUser = mysqli_query($con, "INSERT INTO users (userID, username, password, email, token)
 VALUES ('', '$username', '$password_hash', '$email', '$token')");
 
-header('Location: index.php?e=4');
+
+
+$result=mysqli_query($con, "SELECT username, password, userID FROM `users` WHERE username='$username'");
+
+// Mysql_num_row is counting table row
+$getpass = mysqli_fetch_array($result);
+$username = $getpass['username'];
+$id = $getpass['userID'];
+
+session_start();
+// If result matched $myusername and $mypassword, table row must be 1 row
+
+    echo 'Password is valid!';
+    $_SESSION["username"] = $username;
+    $_SESSION["ID"] = $id;
+    $_SESSION["firstLogin"] = TRUE;
+    header("location: home.php?s=4");
+
+
+
+
+
 }
 
 ?>

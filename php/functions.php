@@ -31,11 +31,22 @@ while($row = mysqli_fetch_array($result))
   echo "<tr><th>Class Location:</th><td>" . $row['classLocation']. "</td></tr>";
   echo "<tr><th>Class Time:</th><td>" . $row['ampmStartTime']. " - " .  $row['ampmEndTime'] . "</td></tr>";
   echo "</table>";
+  $getAssignments = mysqli_query($con,"SELECT * FROM assignments WHERE `classID` = '$row[ID]' ORDER BY dueDate");
   
+  if (
+$count=mysqli_num_rows($getAssignments) == 0 && $row["creatorID"] == $_SESSION["ID"])
+  {echo "<form action='addAssignment.php' method='post'>
+    <button class='loginInput' name='classID' type='submit' value='".$row['ID']."'>Add an Assignment</button>
+</form>";}
+if (
+$count=mysqli_num_rows($getAssignments) != 0)
+  {
   echo "<table border='1px' class='assignmentTable'>";
   echo "<tr><th>Assignment</th><th>Type</th><th>Due Date</td>";
 
     if($row["creatorID"] == $_SESSION["ID"]){
+       
+
 echo "<th><form action='addAssignment.php' method='post'>
     <button class='tableButton' name='classID' type='submit' value='".$row['ID']."'>+</button>
 </form></th>";
@@ -70,7 +81,7 @@ echo "<th><form action='flagAssignment.php' method='post'>
 
 
 echo "</table>";
-
+}
   echo "</div>";
 }
 

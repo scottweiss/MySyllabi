@@ -1,10 +1,10 @@
 <?php 
 session_start();
 include "connect.php";
-$assignmentName = mysql_real_escape_string($_POST["assignmentName"]);
-$assignmentDueDate = mysql_real_escape_string($_POST["assignmentDueDate"]);
-$assignmentDescription = mysql_real_escape_string($_POST["assignmentDescription"]);
-$assignmentType = mysql_real_escape_string($_POST["assignmentType"]);
+$assignmentName = $_POST["assignmentName"];
+$assignmentDueDate = $_POST["assignmentDueDate"];
+$assignmentDescription = $_POST["assignmentDescription"];
+$assignmentType = $_POST["assignmentType"];
 $classID = $_POST["classID"];
 //$startTime = $_POST["startTime"];
 //$endTime = $_POST["endTime"];

@@ -16,6 +16,9 @@ switch ($success) {
     case 3:
         echo "Assignment Updated!";
         break;
+    case 4:
+        echo "Welcome to MySylla.bi! Join classes to stay up-to-date with your coursework.";
+        break;        
 }
 
 echo "</div>";
