@@ -56,6 +56,9 @@ switch ($error) {
     case 14:
         echo "Passwords did not match";
         break; 
+    case 15:
+        echo "Please change something before submitting a flag!";
+        break; 
 }
 
 echo "</div>";

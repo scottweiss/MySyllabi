@@ -15,6 +15,7 @@
         </div><!-- end of sidebar -->
 
         <div id="content" class="stiched">
+            <div class="contentHead">Account Settings</div> 
             <h2>Change Password</h2>
             <div class="success_box">All of the fields were successfully validated!</div>
     <div class="error_box"></div>
@@ -26,8 +27,8 @@
             </form>
             <h2>Change Email</h2>
             <form name="change-email-form" action="?e=3" method="post">
-                <input class="loginInput" type="text" name="oldEmail" class="mainSearch" placeholder="Current Password" required>
-                <input class="loginInput" type="password" name="newEmail" class="mainSearch" placeholder="New Password" required>
+                <input class="loginInput" type="text" name="oldEmail" class="mainSearch" placeholder="New Email Address" required>
+                <input class="loginInput" type="password" name="newEmail" class="mainSearch" placeholder="Confirm Email Address" required>
                 
                 <input class="formInput" type="submit" name="submit" value="Change Email" >
             </form>

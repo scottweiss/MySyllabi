@@ -518,7 +518,9 @@ textarea {
   border-top: 10px solid transparent;
 }
 
-
+.flagNotification{
+	color:red;
+}
 
 
 a:link {color:rgba(55,110,175,1);
@@ -526,7 +528,24 @@ text-decoration:none;}
 a:visited {color:rgba(55,110,175,1);}
 a:hover {color: rgba(232,143,51,1);}
 
+a.reportLink{
+	font-size: .5em;
+	vertical-align: 6px;
+	color:red;
+	/*float:right;*/
+	display: inline-block;
+	right:0px;
+}
 
+.reportLink a{
+	font-size: .5em;
+	color:red;
+	float:right;
+	vertical-align: 6px;
+	position: relative;
+	right:0px;
+	top: -22px;
+}
 
 .shameMargin{
 	margin-bottom: 10px;

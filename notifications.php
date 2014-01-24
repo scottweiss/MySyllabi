@@ -1,29 +1,30 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-    <?php
+<?php session_start(); 
 
-    $index = true;
+
+?>
+<!DOCTYPE html>
+
+            <?php
             include ("header.php");
             include ("php/connect.php");
-        ?>
+            ?>
+
 
     <div id="mainContent">
 
         <div id="sideBar">
-            
-             <?php
-            include ("php/login.php");
-            ?>
 
+             <?php
+            include ("userNav.php");
+             ?>
+            
         </div><!-- end of sidebar -->
 
         <div id="content" class="stiched">
 
-            
-             <div class='class'>
-  
+           <div class="contentHead">Flagged Classes</div>
 
-<?php
+          <?php
 
 
 $getFlags=mysqli_query($con, "SELECT * FROM flags f INNER JOIN classes c ON c.ID=f.objectID
@@ -41,7 +42,8 @@ while($row = mysqli_fetch_array($getFlags))
 
 ?>
 
-  </div><!-- end of class -->
+           <div class="contentHead">Flagged Assignments</div>
+
         
         </div><!-- end of content -->
 
@@ -49,13 +51,11 @@ while($row = mysqli_fetch_array($getFlags))
         <div class="clearfix"></div>
 
     </div>
-<?php
 
-$time = '15%3A30';
-$times = explode("%3A", $time);
-echo $times[0] . ":" .  $times[1]. ":00";
+        <?php
 
             include ("footer.php");
+        
         ?>
 
         </div>
