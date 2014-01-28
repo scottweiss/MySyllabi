@@ -1,0 +1,575 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 28, 2014 at 01:32 AM
+-- Server version: 5.6.12
+-- PHP Version: 5.5.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `scottawe_tbd`
+--
+CREATE DATABASE IF NOT EXISTS `scottawe_tbd` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `scottawe_tbd`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `userID` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`ID`, `userID`) VALUES
+(1, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignments`
+--
+
+DROP TABLE IF EXISTS `assignments`;
+CREATE TABLE IF NOT EXISTS `assignments` (
+  `ID` int(20) NOT NULL AUTO_INCREMENT,
+  `classID` varchar(40) NOT NULL,
+  `creatorID` int(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `dueDate` date NOT NULL,
+  `type` int(2) NOT NULL,
+  `description` varchar(1000) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `assignments`
+--
+
+INSERT INTO `assignments` (`ID`, `classID`, `creatorID`, `name`, `dueDate`, `type`, `description`) VALUES
+(1, '8', 7, 'The best', '2013-10-23', 1, 'This is a test'),
+(2, '8', 7, 'my homework', '2013-11-13', 1, 'this is my homework thats due on the 13th'),
+(3, '9', 7, 'soemthign', '2013-10-18', 1, 'hhhh'),
+(4, '14', 7, 'test', '2013-10-26', 1, 'tteee');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignmentType`
+--
+
+DROP TABLE IF EXISTS `assignmentType`;
+CREATE TABLE IF NOT EXISTS `assignmentType` (
+  `ID` int(4) NOT NULL AUTO_INCREMENT,
+  `assignmentType` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `assignmentType`
+--
+
+INSERT INTO `assignmentType` (`ID`, `assignmentType`) VALUES
+(1, 'Homework'),
+(2, 'Test'),
+(3, 'Final');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classAssignments`
+--
+
+DROP TABLE IF EXISTS `classAssignments`;
+CREATE TABLE IF NOT EXISTS `classAssignments` (
+  `ID` int(4) NOT NULL AUTO_INCREMENT,
+  `classID` int(10) NOT NULL,
+  `assignmentID` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classDays`
+--
+
+DROP TABLE IF EXISTS `classDays`;
+CREATE TABLE IF NOT EXISTS `classDays` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `classID` int(10) NOT NULL,
+  `dayID` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classes`
+--
+
+DROP TABLE IF EXISTS `classes`;
+CREATE TABLE IF NOT EXISTS `classes` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `creatorID` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `section` varchar(5) NOT NULL,
+  `startTime` time NOT NULL,
+  `endTime` time NOT NULL,
+  `professor` varchar(40) NOT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `officeHoursStart` time DEFAULT NULL,
+  `officeHoursEnd` time DEFAULT NULL,
+  `officeHoursLocation` varchar(40) DEFAULT NULL,
+  `classLocation` varchar(40) DEFAULT NULL,
+  `CRN` int(5) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `classes`
+--
+
+INSERT INTO `classes` (`ID`, `creatorID`, `name`, `section`, `startTime`, `endTime`, `professor`, `description`, `officeHoursStart`, `officeHoursEnd`, `officeHoursLocation`, `classLocation`, `CRN`) VALUES
+(8, 7, 'ECON 201', '001', '00:00:00', '00:00:00', 'Scott Weiss', NULL, NULL, NULL, NULL, 'Room 33', NULL),
+(9, 11, 'INFO 333', '001', '00:00:00', '00:00:00', 'Scott Weiss', NULL, NULL, NULL, NULL, 'RUSH 005', NULL),
+(11, 12, 'BLAW 201', '001', '00:00:00', '00:00:00', 'Prof. Richard Freedman', NULL, NULL, NULL, NULL, 'Gerri C. Lebow 033', NULL),
+(14, 7, 'sss', 'sss', '00:00:00', '00:00:00', 'sss', NULL, NULL, NULL, NULL, 'sss', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classInSubject`
+--
+
+DROP TABLE IF EXISTS `classInSubject`;
+CREATE TABLE IF NOT EXISTS `classInSubject` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `subjectID` int(10) NOT NULL,
+  `classID` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `classInSubject`
+--
+
+INSERT INTO `classInSubject` (`ID`, `subjectID`, `classID`) VALUES
+(1, 33, 1),
+(2, 93, 2),
+(3, 32, 3),
+(4, 34, 4),
+(5, 91, 5),
+(6, 1, 6),
+(7, 91, 7),
+(8, 76, 8),
+(9, 112, 9),
+(10, 1, 10),
+(11, 81, 11),
+(12, 33, 12),
+(13, 0, 13),
+(14, 91, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daysType`
+--
+
+DROP TABLE IF EXISTS `daysType`;
+CREATE TABLE IF NOT EXISTS `daysType` (
+  `ID` int(1) NOT NULL AUTO_INCREMENT,
+  `longDay` varchar(10) NOT NULL,
+  `shortDay` varchar(4) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `daysType`
+--
+
+INSERT INTO `daysType` (`ID`, `longDay`, `shortDay`) VALUES
+(1, 'Sunday', 'Sun'),
+(2, 'Monday', 'Mon'),
+(3, 'Tuesday', 'Tues'),
+(4, 'Wednesday', 'Wed'),
+(5, 'Thursday', 'Thur'),
+(6, 'Friday', 'Fri'),
+(7, 'Saturday', 'Sat');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flagErrors`
+--
+
+DROP TABLE IF EXISTS `flagErrors`;
+CREATE TABLE IF NOT EXISTS `flagErrors` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `flagID` varchar(35) NOT NULL,
+  `errorField` varchar(30) NOT NULL,
+  `correctionField` varchar(40) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `flagErrors`
+--
+
+INSERT INTO `flagErrors` (`ID`, `flagID`, `errorField`, `correctionField`) VALUES
+(22, 'fdd7b9a396e0c3352ba9fdeea4d28ad8', 'section', '001777');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flags`
+--
+
+DROP TABLE IF EXISTS `flags`;
+CREATE TABLE IF NOT EXISTS `flags` (
+  `flagID` varchar(35) NOT NULL,
+  `flagType` varchar(10) NOT NULL,
+  `objectID` int(10) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`flagID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `flags`
+--
+
+INSERT INTO `flags` (`flagID`, `flagType`, `objectID`, `status`) VALUES
+('ae9ea4518f5ae1d119143a92ab257c07', 'classes', 9, 1),
+('fdd7b9a396e0c3352ba9fdeea4d28ad8', 'classes', 9, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flagType`
+--
+
+DROP TABLE IF EXISTS `flagType`;
+CREATE TABLE IF NOT EXISTS `flagType` (
+  `ID` int(2) NOT NULL AUTO_INCREMENT,
+  `flagType` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `school`
+--
+
+DROP TABLE IF EXISTS `school`;
+CREATE TABLE IF NOT EXISTS `school` (
+  `ID` int(3) NOT NULL AUTO_INCREMENT,
+  `schoolName` varchar(55) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `school`
+--
+
+INSERT INTO `school` (`ID`, `schoolName`) VALUES
+(1, 'Antoinette Westphal COMAD'),
+(2, 'Arts and Sciences'),
+(3, 'Bennett S. LeBow College of Business'),
+(4, 'Close School of Entrepreneurship'),
+(5, 'College of Engineering'),
+(6, 'Information Science and Technology'),
+(7, 'Miscellaneous'),
+(8, 'Nursing and Health Professions'),
+(9, 'Pennoni Honors College'),
+(10, 'School of Biomedical Engineering, Science, and Heath'),
+(11, 'School of Education'),
+(12, 'School of Public Health'),
+(13, 'School of Technical and Professional Studies');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+DROP TABLE IF EXISTS `subject`;
+CREATE TABLE IF NOT EXISTS `subject` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `schoolID` int(10) NOT NULL,
+  `subjectName` varchar(50) NOT NULL,
+  `subjectCode` varchar(5) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=175 ;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`ID`, `schoolID`, `subjectName`, `subjectCode`) VALUES
+(1, 1, 'Advertising Design', 'ADGD'),
+(2, 1, 'Animation', 'ANIM'),
+(3, 1, 'Architecture', 'ARCH'),
+(4, 1, 'Art History', 'ARTH'),
+(5, 1, 'Arts Administration', 'AADM'),
+(6, 1, 'Dance', 'DANC'),
+(7, 1, 'Design & Merchandising', 'DSMR'),
+(8, 1, 'Digital Media', 'DIGM'),
+(9, 1, 'Entertainment & Arts Management', 'EAM'),
+(10, 1, 'Fashion Design', 'FASH'),
+(11, 1, 'Film & Video', 'FMVD'),
+(12, 1, 'Film Studies', 'FMST'),
+(13, 1, 'Game Art and Production', 'GMAP'),
+(14, 1, 'Graphic Design', 'VSCM'),
+(15, 1, 'Interior Design', 'INTR'),
+(16, 1, 'Museum Leadership', 'MUSL'),
+(17, 1, 'Music', 'MUSC'),
+(18, 1, 'Music Industry Program', 'MIP'),
+(19, 1, 'Photography', 'PHTO'),
+(20, 1, 'Product Design', 'PROD'),
+(21, 1, 'Screenwriting & Playwriting', 'SCRP'),
+(22, 1, 'TV Industry & Enterprise', 'TVIE'),
+(23, 1, 'TV Production', 'TVPR'),
+(24, 1, 'TV Studies', 'TVST'),
+(25, 1, 'Television Management', 'TVMN'),
+(26, 1, 'Theater', 'THTR'),
+(27, 1, 'University-Wide Courses', 'UNIV'),
+(28, 1, 'Visual Studies', 'VSST'),
+(29, 1, 'WEST Studies', 'WEST'),
+(30, 1, 'Web & Motion Graphics', 'WMGD'),
+(31, 1, 'Web Development', 'WBDV'),
+(32, 2, 'Africana Studies', 'AFAS'),
+(33, 2, 'Anthropology', 'ANTH'),
+(34, 2, 'Arabic', 'ARBC'),
+(35, 2, 'Arts & Sciences-Interdisp Stud', 'AS-I'),
+(36, 2, 'Bioscience & Biotechnology', 'BIO'),
+(37, 2, 'Chemical Engineering Chemistry', 'CHEC'),
+(38, 2, 'Chemistry', 'CHEM'),
+(39, 2, 'Chinese', 'CHIN'),
+(40, 2, 'Communication', 'COM'),
+(41, 2, 'Criminal Justice', 'CJ'),
+(42, 2, 'English', 'ENDK'),
+(43, 2, 'Environmental Policy', 'ENVP'),
+(44, 2, 'Environmental Science', 'ENVS'),
+(45, 2, 'French', 'FREN'),
+(46, 2, 'Geoscience ', 'GEO'),
+(47, 2, 'German', 'GER'),
+(48, 2, 'Greek', 'GREC'),
+(49, 2, 'Hebrew', 'HBRW'),
+(50, 2, 'History', 'HIST'),
+(51, 2, 'Humanities, General', 'HUM'),
+(52, 2, 'International Area Studies', 'IAS'),
+(53, 2, 'Italian', 'ITAL'),
+(54, 2, 'Japanese', 'JAPN'),
+(55, 2, 'Judaic Studies', 'JUDA'),
+(56, 2, 'Korean', 'KOR'),
+(57, 2, 'Language', 'LANG'),
+(58, 2, 'Linguistics', 'LING'),
+(59, 2, 'Mathematics', 'MATH'),
+(60, 2, 'Philosophy', 'PHIL'),
+(61, 2, 'Physics', 'PHYS'),
+(62, 2, 'Physics-Environmental Science', 'PHEV'),
+(63, 2, 'Political Studies', 'PSCI'),
+(64, 2, 'Portuguese', 'PORT'),
+(65, 2, 'Psychology', 'PSY'),
+(66, 2, 'Public Policy', 'PLCY'),
+(67, 2, 'Publication Management', 'PMGT'),
+(68, 2, 'Russian', 'RUSS'),
+(69, 2, 'Sociology', 'SOC'),
+(70, 2, 'Spanish', 'SPAN'),
+(71, 2, 'University-Wide Courses', 'UNIV'),
+(72, 2, 'Women''s Studies', 'WMST'),
+(73, 2, 'Writing', 'WRIT'),
+(74, 3, 'Accounting', 'ACCT'),
+(75, 3, 'Business Statistics', 'STAT'),
+(76, 3, 'Economics', 'ECON'),
+(77, 3, 'Finance', 'FIN'),
+(78, 3, 'General Business', 'BUSN'),
+(79, 3, 'Human Resource Management', 'HRMT'),
+(80, 3, 'International Business', 'INTB'),
+(81, 3, 'Legal Studies', 'BLAW'),
+(82, 3, 'Management', 'MGMT'),
+(83, 3, 'Management Information System', 'MIS'),
+(84, 3, 'Marketing', 'MKTG'),
+(85, 3, 'Operations Management', 'OPM'),
+(86, 3, 'Operations Research', 'OPR'),
+(87, 3, 'Organizational Behavior', 'ORGB'),
+(88, 3, 'Production Operations Mgmt', 'POM'),
+(89, 3, 'Taxation', 'TAX'),
+(90, 3, 'University-Wide Courses', 'UNIV'),
+(91, 4, 'Entrepreneurship & Innovation', 'ENTP'),
+(92, 5, 'Architectural Engineering', 'AE'),
+(93, 5, 'Chemical Engineering', 'CHE'),
+(94, 5, 'Civil & Arch Engineering', 'CAE'),
+(95, 5, 'Civil Engineering', 'CHE'),
+(96, 5, 'Civil, Arch & Envr Engr', 'CAEE'),
+(97, 5, 'Computer Science', 'CS'),
+(98, 5, 'Elec & Computer Engr-Computers', 'ECEC'),
+(99, 5, 'Elec & Computer Engr-Electroph', 'ECEE'),
+(100, 5, 'Elec & Computer Engr-Power Eng', 'ECEP'),
+(101, 5, 'Elec & Computer Engr-Systems', 'ECES'),
+(102, 5, 'Elec & Computer Engr-Telecom', 'ECET'),
+(103, 5, 'Electrical & Computer Engr', 'ECE'),
+(104, 5, 'Electrical Engineering Lab', 'ECEL'),
+(105, 5, 'Engineering Management', 'EGMT'),
+(106, 5, 'Engineering, General', 'ENGR'),
+(107, 5, 'Environmental Engineering', 'ENVE'),
+(108, 5, 'Materials Engineering', 'MATE'),
+(109, 5, 'Mechanical Engr & Mechanics', 'MEM'),
+(110, 5, 'Software Engineering', 'SE'),
+(111, 5, 'University-Wide Courses', 'UNIV'),
+(112, 6, 'Information Science & System', 'INFO'),
+(113, 6, 'Software Engineering', 'SE'),
+(114, 7, 'Career Integrated Education', 'CIE'),
+(115, 7, 'Common Exams', 'EXAM'),
+(116, 7, 'Cooperative Education', 'COOP'),
+(117, 7, 'Military Science', 'MLSC'),
+(118, 8, 'Anatomy', 'ANAT'),
+(119, 8, 'Behavioral & Addictions Couns', 'BACS'),
+(120, 8, 'Complement. & Integrative Ther', 'CIT'),
+(121, 8, 'Couple & Family Therapy', 'CFTP'),
+(122, 8, 'Creative Arts in Therapy', 'ARTS'),
+(123, 8, 'Health Sciences', 'HSCI'),
+(124, 8, 'Health Services Administration', 'HSAD'),
+(125, 8, 'Medical Billing and Coding', 'MBC'),
+(126, 8, 'Medical Family Therapy', 'MFTP'),
+(127, 8, 'Nursing', 'NURS'),
+(128, 8, 'Nutrition & Food Science', 'NFS'),
+(129, 8, 'Physical Therapy Rehab Science', 'PTRS'),
+(130, 8, 'Physician Assistant', 'PA'),
+(131, 8, 'Physiology', 'PHGY'),
+(132, 8, 'Radiologic Sciences', 'RADI'),
+(133, 8, 'Rehabilitation Sciences', 'RHAB'),
+(134, 8, 'Research', 'RSCH'),
+(135, 8, 'Statistics', 'STS'),
+(136, 8, 'University-Wide Courses', 'UNIV'),
+(137, 9, 'Civic Engagement', 'CIVC'),
+(138, 9, 'Custom-Designed Major', 'CSDN'),
+(139, 9, 'Horors Program', 'HNRS'),
+(140, 9, 'University-Wide Courses', 'UNIV'),
+(141, 10, 'Biomedical Engineering & Sci', 'BMES'),
+(142, 11, 'Ed:Global & International Ed', 'EDGI'),
+(143, 11, 'Education Human Resource Devel', 'EHRD'),
+(144, 11, 'Education Learning Tech', 'EDLT'),
+(145, 11, 'Educational Administration', 'EDAM'),
+(146, 11, 'Educational Policy', 'EDPO'),
+(147, 11, 'Higher Education', 'EDHE'),
+(148, 11, 'Mathematics Education', 'MTED'),
+(149, 11, 'Special Education', 'EDEX'),
+(150, 11, 'Teacher Education', 'EDUC'),
+(151, 12, 'Public Health', 'PBHL'),
+(152, 13, 'Biomedical Engineering Tech', 'BET'),
+(153, 13, 'Communications & Applied Tech', 'CAT'),
+(154, 13, 'Computing & Security Tech', 'CST'),
+(155, 13, 'Computing Technology', 'CT'),
+(156, 13, 'Construction Management', 'CMGT'),
+(157, 13, 'Creativity Studies', 'CRTV'),
+(158, 13, 'Culinary Arts', 'CULA'),
+(159, 13, 'E-Learning Leadership', 'ELL'),
+(160, 13, 'Electrical Engr Technology', 'EET'),
+(161, 13, 'Emergency Management', 'EMER'),
+(162, 13, 'Engineering Technology', 'ET'),
+(163, 13, 'Food Science', 'FDSC'),
+(164, 13, 'General Studies', 'GSTD'),
+(165, 13, 'Homeland Security Mgmt', 'HSM'),
+(166, 13, 'Hotel & Restaurant Management', 'HRM'),
+(167, 13, 'Manufacturing Engr Technology', 'MET'),
+(168, 13, 'Mechanical Engr Technology', 'MHT'),
+(169, 13, 'Professional Studies', 'PRST'),
+(170, 13, 'Project Management', 'PROJ'),
+(171, 13, 'Property Management', 'PRMT'),
+(172, 13, 'Real Estate', 'REAL'),
+(173, 13, 'Retail Leadership', 'RETL'),
+(174, 13, 'Sport Management', 'SMT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userClasses`
+--
+
+DROP TABLE IF EXISTS `userClasses`;
+CREATE TABLE IF NOT EXISTS `userClasses` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `userID` int(10) NOT NULL,
+  `classID` int(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `userClasses`
+--
+
+INSERT INTO `userClasses` (`ID`, `userID`, `classID`) VALUES
+(9, 7, 9),
+(7, 7, 8),
+(10, 7, 10),
+(12, 12, 8),
+(13, 12, 11),
+(14, 7, 11),
+(16, 7, 12),
+(17, 7, 13),
+(18, 13, 11),
+(19, 13, 8),
+(20, 13, 9),
+(21, 7, 14),
+(22, 11, 14),
+(23, 11, 9),
+(24, 11, 8),
+(25, 11, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `accountLocked` int(1) NOT NULL DEFAULT '0',
+  `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `failedAttempts` int(1) NOT NULL,
+  `intNotificationRange` int(2) NOT NULL,
+  `extNotificationRange` int(2) NOT NULL,
+  `emailPublicToggle` int(1) NOT NULL DEFAULT '0',
+  `usernamePublicToggle` int(1) NOT NULL DEFAULT '0',
+  `token` varchar(40) NOT NULL,
+  PRIMARY KEY (`userID`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userID`, `email`, `username`, `password`, `accountLocked`, `dateCreated`, `failedAttempts`, `intNotificationRange`, `extNotificationRange`, `emailPublicToggle`, `usernamePublicToggle`, `token`) VALUES
+(11, 'scott.a.weiss@gmail.com', 'scottweiss', '$2y$10$LaliZnYYNsk2sKN9I48yZufQKKBVZ3rA00eVwUKXOlrDk3GagYZA6', 0, '2013-08-26 02:18:19', 0, 0, 0, 0, 0, '12345'),
+(13, 'test@aol.com', 'testtest', '$2y$10$olP4p9/K6efQrBRHrUBHEOLlck6l509bYuC4KVCwAMV6rM1nXPvxq', 0, '2013-10-28 17:46:30', 0, 0, 0, 0, 0, 'Vs0lyzKjbXlpHGKkaX5abFq01vIsedRaGSverfxD'),
+(12, 'stephanie.ma09@gmail.com', 'stephma', '$2y$10$l28Yq1fXBI0WF/MN0ZZ8VO8tdFEX1yf8RbjmK1VAL2P2r2dF8IgCa', 0, '2013-10-22 18:17:01', 0, 0, 0, 0, 0, 'Y9ggp3vrXgfeI8kRTl9vMOSJTKfUAfvyoLPOOkfM'),
+(17, 'asdasdasdasd@aol.com', 'test1234', '$2y$10$VqGc74e0vUHNcZK3WPkPauWkMGkMe4EmuOuc76XiDViJxgUKlqGem', 0, '2013-10-30 17:02:47', 0, 0, 0, 0, 0, 'nAABMvt7RDxYrW5CrLjfn9N1O9o0K0M8AnKnSdvJ');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
